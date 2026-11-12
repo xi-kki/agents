@@ -91,7 +91,7 @@ form{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(to top,va
 </form>
 <script>
 const SAME_ORIGIN = /workers\.dev$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
-const API = (SAME_ORIGIN ? '' : 'https://regready.xikki.workers.dev') + '/api/chat';
+const API = (SAME_ORIGIN ? '' : 'https://regready.xi-kki.workers.dev') + '/api/chat';
 const WA = 'https://wa.me/2349066339975';
 const log = document.getElementById('log'), q = document.getElementById('q');
 const store = { get(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}} };
