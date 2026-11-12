@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RegReady — NAFDAC & export checklist</title>
+<meta name="description" content="Free checklist for Nigerian food founders: NAFDAC registration and export paperwork, with the official source for every step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1e7; --surface:#fffdf8; --ink:#1d2a22; --muted:#5d6a61; --line:#e3dccd;
+  --brand:#0f5c3a; --brand-ink:#fff; --accent:#d98a1f; --soft:#e8f0e9;
+  --ok:#0f5c3a; --warn:#9a5b00; --warn-bg:#fdf1dc; --ptr:#3d5a80; --ptr-bg:#e6edf6;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#111814; --surface:#18221c; --ink:#eef3ee; --muted:#a3b0a7; --line:#2a372f;
+  --brand:#4fbf86; --brand-ink:#0b1510; --accent:#f0a948; --soft:#1f2e25;
+  --ok:#6fd3a0; --warn:#f3c179; --warn-bg:#33270f; --ptr:#9cb9e0; --ptr-bg:#1c2635;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}
+.wrap{max-width:760px;margin:0 auto;padding:40px 16px 120px}
+header .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:Fraunces,Georgia,serif;font-weight:650;font-size:clamp(32px,6vw,48px);line-height:1.08;margin:8px 0 12px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--brand)}
+.lede{color:var(--muted);max-width:56ch;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.chip:hover{border-color:var(--brand)}
+#log{margin-top:32px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:88%;padding:12px 16px;border-radius:16px;white-space:pre-wrap;word-wrap:break-word}
+.me{align-self:flex-end;background:var(--brand);color:var(--brand-ink);border-bottom-right-radius:4px}
+.bot{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:4px}
+.bot .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;align-self:stretch}
+.card h2{font-family:Fraunces,Georgia,serif;font-size:22px;margin:0 0 4px}
+.summary{color:var(--muted);font-size:14px;margin:0 0 12px}
+.progress{height:6px;background:var(--soft);border-radius:6px;overflow:hidden;margin:4px 0 16px}
+.progress i{display:block;height:100%;background:var(--brand);width:0;transition:width .3s}
+.phase{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:18px 0 6px}
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.step{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px;border:1px solid var(--line);border-radius:12px}
+.step input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--brand)}
+.step.done .t{text-decoration:line-through;color:var(--muted)}
+.t{font-weight:600}
+.n{color:var(--muted);font-weight:500;margin-right:4px}
+.d{margin:4px 0 8px;font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:13px;color:var(--muted)}
+.badge{border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.b-official{background:var(--soft);color:var(--ok)}
+.b-secondary{background:var(--warn-bg);color:var(--warn)}
+.b-pointer{background:var(--ptr-bg);color:var(--ptr)}
+.note{background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:12px}
+.disc{font-size:13px;color:var(--muted);margin-top:14px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.btn{border:0;border-radius:10px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn.primary{background:var(--brand);color:var(--brand-ink)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.cta{margin-top:18px;padding:14px 16px;border-radius:12px;background:var(--soft)}
+.cta p{margin:0 0 10px}
+.cites{font-size:13px;margin-top:8px}
+form{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(to top,var(--bg) 70%,transparent);padding:18px 16px}
+.bar{max-width:760px;margin:0 auto;display:flex;gap:8px}
+.bar input{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:14px 16px;font:inherit}
+.bar input:focus{outline:2px solid var(--brand);outline-offset:1px}
+.typing{color:var(--muted);font-size:14px}
+@media print{form,.chips,.actions,.cta{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="eyebrow"><a href="../" style="color:inherit;text-decoration:none">← Xi-kki Agents</a> · Free</div>
+    <h1>Get your food product <em>NAFDAC-ready</em> and export-ready.</h1>
+    <p class="lede">Tell me what you make and where you want to sell it. You'll get a step-by-step checklist with the official source for every step.</p>
+    <div class="chips" id="examples">
+      <button class="chip">I sell bottled zobo in Lagos, 3 staff, want to export to the UK</button>
+      <button class="chip">I make chin-chin at home, just me, Nigeria only</button>
+      <button class="chip">Export raw cashew nuts to the EU, 12 workers</button>
+    </div>
+  </header>
+  <section id="log" aria-live="polite"></section>
+</main>
+<form id="f" autocomplete="off">
+  <div class="bar">
+    <input id="q" placeholder="e.g. I make spiced kunu in Abuja and want to sell in Ghana" aria-label="Your message" maxlength="1000">
+    <button class="btn primary" type="submit">Send</button>
+  </div>
+</form>
+<script>
+const SAME_ORIGIN = /workers\.dev$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+const API = (SAME_ORIGIN ? '' : 'https://regready.regready.workers.dev') + '/api/chat';
+const WA = 'https://wa.me/2349066339975';
+const log = document.getElementById('log'), q = document.getElementById('q');
+const store = { get(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}} };
+let profile = {}, checklist = null;
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const host = u => { try { return new URL(u).hostname.replace(/^www\./,'') } catch { return 'source' } };
+function bubble(cls, html){ const d=document.createElement('div'); d.className='msg '+cls; d.innerHTML=html; log.appendChild(d); d.scrollIntoView({behavior:'smooth',block:'end'}); return d; }
+
+async function call(body){
+  const t = bubble('bot typing','Checking the rules…');
+  try{
+    const r = await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    t.remove();
+    if(!r.ok) throw new Error(r.status);
+    return await r.json();
+  }catch(e){ t.remove(); bubble('bot','Something went wrong. Please try again in a moment.'); return null; }
+}
+
+async function send(text){
+  text = text.trim(); if(!text) return;
+  bubble('me', esc(text)); q.value='';
+  const body = checklist ? {mode:'ask', message:text, profile} : {message:text, profile};
+  const res = await call(body); if(!res) return;
+  if(res.type==='question'){ profile=res.profile; renderQuestion(res.question); }
+  else if(res.type==='checklist'){ profile=res.profile; checklist=res; renderChecklist(res); }
+  else if(res.type==='answer'){ renderAnswer(res); }
+}
+
+function renderQuestion(qn){
+  const d = bubble('bot', esc(qn.q)+'<div class="opts"></div>');
+  const o = d.querySelector('.opts');
+  qn.options.forEach(opt=>{ const b=document.createElement('button'); b.className='chip'; b.textContent=opt; b.type='button';
+    b.onclick=()=>{ o.remove(); send(mapOpt(qn.key,opt)); }; o.appendChild(b); });
+}
+function mapOpt(key,opt){
+  if(key==='scale') return opt==='Just me' ? 'just me' : opt==='2–10' ? '5 staff' : '20 staff';
+  if(key==='export') return opt==='Nigeria only' ? 'sell locally in Nigeria' : 'export to '+opt;
+  return opt;
+}
+
+const PHASES = {register:'NAFDAC registration', export:'Export paperwork', destination:'Destination country'};
+const BADGE = {official:['b-official','Official source'], secondary:['b-secondary','Verify, not yet confirmed'], pointer:['b-pointer','Official pointer']};
+
+function renderChecklist(c){
+  const key = 'rr-ticks:'+c.kb_version+':'+c.items.map(i=>i.id).join(',');
+  const ticks = new Set(store.get(key)||[]);
+  const p = c.profile;
+  const sum = [p.productType && (p.productType==='raw'?'Raw product':'Processed product'), p.scale && (p.scale==='micro'?'micro scale':'small scale'), p.export ? 'export'+(p.destination?' to '+p.destination.toUpperCase():'') : 'Nigeria only'].filter(Boolean).join(' · ');
+  let html = `<h2>Your checklist</h2><p class="summary">${esc(sum)} · ${c.items.length} steps</p><div class="progress"><i></i></div>`;
+  let phase = '', n = 0;
+  c.items.forEach(i=>{
+    n++;
+    if(i.phase!==phase){ if(phase) html+='</ol>'; phase=i.phase; html+=`<div class="phase">${PHASES[phase]||phase}</div><ol class="steps">`; }
+    const [bc,bl] = BADGE[i.confidence]||BADGE.secondary;
+    html += `<li class="step${ticks.has(i.id)?' done':''}" data-id="${esc(i.id)}"><input type="checkbox" aria-label="Mark step ${n} done" ${ticks.has(i.id)?'checked':''}><div>
+      <div class="t"><span class="n">${n}.</span>${esc(i.title)}</div><p class="d">${esc(i.detail)}</p>
+      <div class="meta"><span>${esc(i.agency)}</span><span class="badge ${bc}">${bl}</span><a href="${esc(i.source_url)}" target="_blank" rel="noopener">${esc(host(i.source_url))} ↗</a><span>checked ${esc(i.verified_on)}</span></div></div></li>`;
+  });
+  if(phase) html+='</ol>';
+  c.notes.forEach(t=> html += `<div class="note">${esc(t)}</div>`);
+  html += `<p class="disc">${esc(c.disclaimer)} Ask me about any step, e.g. “explain step 3”.</p>
+    <div class="actions"><button class="btn ghost" data-a="wa">Send to WhatsApp</button><button class="btn ghost" data-a="print">Print / save PDF</button><button class="btn ghost" data-a="reset">Start over</button></div>
+    <div class="cta"><p><strong>Want this done for you?</strong> Label design, a product website, or a custom agent for your business.</p><a class="btn primary" href="${WA}?text=${encodeURIComponent('Hi Xi-kki, I used RegReady and want help with: ')}" target="_blank" rel="noopener">Chat on WhatsApp</a></div>`;
+  const card = document.createElement('div'); card.className='card'; card.innerHTML=html; log.appendChild(card);
+  const bar = card.querySelector('.progress i');
+  const upd = ()=>{ bar.style.width = (100*ticks.size/c.items.length)+'%'; };
+  upd();
+  card.querySelectorAll('.step input').forEach(cb=> cb.onchange=()=>{
+    const li=cb.closest('.step'), id=li.dataset.id; cb.checked?ticks.add(id):ticks.delete(id);
+    li.classList.toggle('done',cb.checked); store.set(key,[...ticks]); upd(); });
+  card.querySelector('[data-a=wa]').onclick=()=>{
+    const txt = 'My RegReady checklist:\n'+c.items.map((i,k)=>`${k+1}. ${i.title} (${i.agency}) ${i.source_url}`).join('\n')+'\n\n'+c.disclaimer;
+    window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank','noopener'); };
+  card.querySelector('[data-a=print]').onclick=()=>window.print();
+  card.querySelector('[data-a=reset]').onclick=()=>{ profile={}; checklist=null; log.innerHTML=''; q.focus(); };
+  card.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderAnswer(r){
+  let html = esc(r.answer);
+  if(r.cited?.length) html += '<div class="cites">Sources: '+r.cited.map(c=>`<a href="${esc(c.source_url)}" target="_blank" rel="noopener">[${c.n}] ${esc(c.title)}</a>`).join(' · ')+'</div>';
+  bubble('bot', html);
+}
+
+document.getElementById('f').onsubmit = e => { e.preventDefault(); send(q.value); };
+document.querySelectorAll('#examples .chip').forEach(b=> b.onclick=()=>send(b.textContent));
+</script>
+</body>
+</html>
