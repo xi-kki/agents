@@ -37,21 +37,56 @@ h2{font-family:Fraunces,Georgia,serif;font-size:26px;margin:44px 0 6px}
 .links a.gh{color:var(--muted)}
 footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 footer a{color:var(--brand);font-weight:600}
-.logo{font-weight:800;letter-spacing:-.02em;text-decoration:none}.logo span{opacity:.6;font-weight:500}
+.logo{white-space:nowrap;font-weight:800;letter-spacing:-.02em;text-decoration:none}.logo span{opacity:.6;font-weight:500}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin:-16px 0 22px}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:600;text-decoration:none;padding:13px 20px;border-radius:999px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:hover{filter:brightness(1.08)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chips a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--surface)}
+.chips a:hover{color:var(--brand);border-color:var(--brand)}
+h2{scroll-margin-top:16px}
+.card{padding:0;overflow:hidden}
+.card>:not(.shot){margin-left:20px;margin-right:20px}
+.card .tag{margin-top:16px}
+.card .links{margin-bottom:20px}
+.shot-link{display:contents}
+.shot{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--soft);border-bottom:1px solid var(--line)}
+.shot.ph{display:grid;place-items:center;font:650 34px Fraunces,Georgia,serif;color:var(--brand);background:linear-gradient(135deg,var(--soft),var(--surface))}
+.card.feature{display:grid;grid-template-columns:1.1fr 1fr;align-items:center}
+.card.feature .shot{grid-row:1/6;grid-column:1;height:100%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line)}
+.card.feature>:not(.shot){grid-column:2}
+@media (max-width:640px){
+  .wrap{padding:20px 16px 60px}
+  .grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:2px 16px 10px;scrollbar-width:none}
+  .grid::-webkit-scrollbar{display:none}
+  .card{flex:0 0 80%;scroll-snap-align:start}
+  .card.feature{display:flex;flex-direction:column;align-items:stretch;flex:0 0 80%}
+  .top{flex-wrap:wrap;margin-bottom:28px}
+  .top nav{gap:10px;font-size:13px}
+  .card.feature .shot{height:auto;aspect-ratio:16/10;border-right:0;border-bottom:1px solid var(--line)}
+  .card p{font-size:14px}
+  .card h3{font-size:20px}
+  h2{font-size:22px;margin-top:32px}
+  .sub{font-size:14px;margin-bottom:12px}
+  .top nav{gap:12px}
+}
 </style>
 </head>
 <body>
 <main class="wrap">
   <div class="top">
     <a class="logo" href="/">xi-kki/<span>agents</span></a>
-    <nav><a href="/builds/">Builds</a><a href="/video/">Video</a><a href="/writes/">Writes</a></nav>
+    <nav><a href="/agents/" aria-current="page" style="color:var(--ink)">Agents</a><a href="/builds/">Builds</a><a href="/video/">Video</a><a href="/writes/">Writes</a><a href="https://wa.me/2349066339975" target="_blank" rel="noopener">Contact</a></nav>
   </div>
 
   <div class="eyebrow">By Xi-kki</div>
   <h1>AI agents for food-tech founders.</h1>
-  <p class="lede">Agents that answer one hard question well: compliance, sourcing, kitchen stock, food waste. Need one built for your business? Message me.</p>
+  <p class="lede">Agents that take one hard job off your plate: compliance, sourcing, kitchen stock, food waste. Try them free below, or get one built for your business.</p>
+  <div class="cta-row"><a class="btn" href="https://wa.me/2349066339975?text=Hi%20Xi-kki%2C%20I%20want%20an%20AI%20agent%20for%20my%20business" target="_blank" rel="noopener">Get a custom agent</a><a class="btn ghost" href="#food">Try the agents ↓</a></div>
+  <nav class="chips" aria-label="Jump to"><a href="#food">Food-tech</a><a href="#founder">Founders</a><a href="#infra">Infrastructure</a></nav>
 
-  <h2>Food-tech agents</h2>
+  <h2 id="food">Food-tech agents</h2>
   <p class="sub">Compliance, sourcing and kitchen operations.</p>
   <div class="grid">
     <div class="card feature">
@@ -64,7 +99,7 @@ footer a{color:var(--brand);font-weight:600}
       <span class="tag">Live</span>
       <h3>Zareb</h3>
       <p>Checks food product documents against EU and UK export rules and tells you what to fix.</p>
-      <div class="links"><a href="https://zareb.netlify.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/zareb" target="_blank" rel="noopener">Code</a></div>
+      <div class="links"><a href="https://zareb.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/zareb" target="_blank" rel="noopener">Code</a></div>
     </div>
     <div class="card">
       <span class="tag">Live</span>
@@ -82,7 +117,7 @@ footer a{color:var(--brand);font-weight:600}
       <span class="tag">Live</span>
       <h3>Sousy</h3>
       <p>Hands-free voice agent for commercial kitchen inventory. Talk, and stock updates itself.</p>
-      <div class="links"><a href="https://sousy.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/sousy" target="_blank" rel="noopener">Code</a></div>
+      <div class="links"><a href="https://sousy-two.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/sousy" target="_blank" rel="noopener">Code</a></div>
     </div>
     <div class="card">
       <span class="tag">Live</span>
@@ -104,7 +139,7 @@ footer a{color:var(--brand);font-weight:600}
     </div>
   </div>
 
-  <h2>Founder agents</h2>
+  <h2 id="founder">Founder agents</h2>
   <p class="sub">Funding, research, negotiation and growth.</p>
   <div class="grid">
     <div class="card">
@@ -145,7 +180,7 @@ footer a{color:var(--brand);font-weight:600}
     </div>
   </div>
 
-  <h2>Agent infrastructure</h2>
+  <h2 id="infra">Agent infrastructure</h2>
   <p class="sub">Trust, payments and onboarding for agents on-chain.</p>
   <div class="grid">
     <div class="card">
@@ -174,5 +209,17 @@ footer a{color:var(--brand);font-weight:600}
     <a href="https://xi-kki.github.io/#certifications">Certifications →</a>
   </footer>
 </main>
+<script>
+// thumbnail on every card (shots/<name>.webp), name tile if none
+document.querySelectorAll(".card").forEach(c => {
+  const n = c.querySelector("h3").textContent.trim(), slug = n.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const href = c.querySelector(".links a")?.getAttribute("href");
+  const img = new Image(); img.className = "shot"; img.loading = "lazy"; img.alt = n + " preview"; img.width = 640; img.height = 400;
+  img.onerror = () => { const d = document.createElement("div"); d.className = "shot ph"; d.textContent = n; img.replaceWith(d); };
+  img.src = "shots/" + slug + ".webp";
+  const wrap = href ? Object.assign(document.createElement("a"), { href, target: href.startsWith("http") ? "_blank" : "", rel: "noopener", tabIndex: -1 }) : null;
+  if (wrap) { wrap.append(img); wrap.className = "shot-link"; c.prepend(wrap); } else c.prepend(img);
+});
+</script>
 </body>
 </html>
