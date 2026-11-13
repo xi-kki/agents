@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zamu — plant doctor in your pocket</title>
+<meta name="description" content="Snap a photo of a sick plant. Zamu tells you what's wrong, how to treat it and how to stop it coming back. Free to sign up.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230f5c3a%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27%23fff%27 font-family=%27sans-serif%27 font-weight=%27700%27%3Ez%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e7;--surface:#fffdf8;--ink:#1d2a22;--muted:#5d6a61;--line:#e3dccd;--brand:#0f5c3a;--brand-ink:#fff;--soft:#e8f0e9;--leaf:#7fbf5a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111814;--surface:#18221c;--ink:#eef3ee;--muted:#a3b0a7;--line:#2a372f;--brand:#4fbf86;--brand-ink:#0b1510;--soft:#1f2e25}}
+:root[data-theme="dark"]{--bg:#111814;--surface:#18221c;--ink:#eef3ee;--muted:#a3b0a7;--line:#2a372f;--brand:#4fbf86;--brand-ink:#0b1510;--soft:#1f2e25}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:24px 16px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.logo{font-weight:600;text-decoration:none;color:var(--muted)}.logo span{color:var(--brand)}
+.top .in{color:var(--muted);text-decoration:none;font-weight:500}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px 0 40px}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600;margin:0}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(38px,6.4vw,64px);line-height:1.02;margin:10px 0 16px;letter-spacing:-.015em}
+.lede{color:var(--muted);font-size:18px;max-width:46ch;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s,background .2s}
+.btn.pri{background:var(--brand);color:var(--brand-ink)}
+.btn.pri:hover{transform:translateY(-1px)}
+.btn.sec{border:1px solid var(--line);color:var(--ink)}
+.note{font-size:13px;color:var(--muted);margin:12px 0 0}
+/* phone mock */
+.phone{justify-self:center;width:min(300px,80vw);aspect-ratio:9/18;border-radius:36px;background:var(--surface);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(15,92,58,.35);padding:14px;display:flex;flex-direction:column;gap:12px}
+.snap{flex:1;border-radius:24px;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 30% 20%,#cfe6bf,#7fae63 55%,#3f6e35)}
+.snap svg{position:absolute;inset:0;margin:auto;width:70%;height:70%}
+.scan{position:absolute;left:0;right:0;height:2px;background:#fff;box-shadow:0 0 18px 4px rgba(255,255,255,.7);animation:scan 2.6s ease-in-out infinite}
+@keyframes scan{0%,100%{top:12%}50%{top:86%}}
+@media (prefers-reduced-motion:reduce){.scan{animation:none;top:50%}}
+.dx{background:var(--soft);border-radius:18px;padding:14px 16px}
+.dx b{display:block;font-family:Fraunces,Georgia,serif;font-size:19px}
+.dx small{color:var(--muted)}
+.bar{height:6px;border-radius:6px;background:var(--line);margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;width:92%;background:var(--brand)}
+h2{font-family:Fraunces,Georgia,serif;font-size:clamp(26px,3.6vw,34px);margin:0 0 20px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 56px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.step em{font-style:normal;font:650 30px Fraunces,Georgia,serif;color:var(--brand)}
+.step h3{margin:6px 0 4px;font-size:18px}
+.step p{margin:0;color:var(--muted)}
+.band{background:var(--brand);color:var(--brand-ink);border-radius:24px;padding:36px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.band h2{margin:0;color:inherit}
+.band .btn{background:var(--brand-ink);color:var(--brand)}
+footer{margin-top:40px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:32px;gap:32px}.steps{grid-template-columns:1fr}.cta .btn{flex:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="/">xi-kki/<span>zamu</span></a>
+    <a class="in" href="https://zamu.base44.app/" rel="noopener">Log in</a>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Plant doctor in your pocket</p>
+      <h1>Sick plant? Snap it. Save it.</h1>
+      <p class="lede">Take one photo. Zamu spots the disease or pest, tells you how to treat it with what you have, and how to stop it coming back.</p>
+      <div class="cta">
+        <a class="btn pri" href="https://zamu.base44.app/" rel="noopener">Sign up free</a>
+        <a class="btn sec" href="#how">How it works</a>
+      </div>
+      <p class="note">Free. Works on any phone camera. Sign up with email or Google.</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="snap">
+        <svg viewBox="0 0 100 100" fill="none"><path d="M50 92V40" stroke="#2f5a26" stroke-width="3"/><path d="M50 58C30 58 18 44 18 24c20 0 32 14 32 34Z" fill="#9ccc7a"/><path d="M50 48c18 0 30-12 30-30-18 0-30 12-30 30Z" fill="#b7dc93"/><circle cx="34" cy="38" r="3" fill="#a0742c"/><circle cx="28" cy="31" r="2.2" fill="#a0742c"/><circle cx="66" cy="28" r="2.4" fill="#a0742c"/></svg>
+        <div class="scan"></div>
+      </div>
+      <div class="dx"><small>Diagnosis</small><b>Early blight</b><small>Confidence 92%</small><div class="bar"><i></i></div></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><em>1</em><h3>Snap</h3><p>Photograph the leaf, stem or fruit that looks wrong.</p></div>
+      <div class="step"><em>2</em><h3>Diagnose</h3><p>Zamu names the problem and how sure it is.</p></div>
+      <div class="step"><em>3</em><h3>Treat</h3><p>Get step-by-step treatment and care advice to prevent it next season.</p></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2>Your first diagnosis is a photo away.</h2>
+    <a class="btn" href="https://zamu.base44.app/" rel="noopener">Sign up free</a>
+  </section>
+
+  <footer>
+    <span>Zamu · built by <a href="/">Xi-kki</a></span>
+    <a href="/agents/">More agents</a>
+  </footer>
+</div>
+</body>
+</html>
