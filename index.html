@@ -33,7 +33,7 @@ h2{font-family:Fraunces,Georgia,serif;font-size:26px;margin:44px 0 6px}
 .feature .tag{background:var(--surface)}
 .tag.code{background:transparent;border:1px solid var(--line);color:var(--muted)}
 .links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:600}
-.links a{color:var(--brand);text-decoration:none}
+.links a{color:var(--brand);text-decoration:none;display:inline-flex;align-items:center;min-height:40px;padding:0 4px}
 .links a:hover{text-decoration:underline}
 .links a.gh{color:var(--muted)}
 footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -44,7 +44,7 @@ footer a{color:var(--brand);font-weight:600}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn:hover{filter:brightness(1.08)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.chips a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--surface)}
+.chips a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:10px 14px;min-height:40px;display:inline-flex;align-items:center;background:var(--surface)}
 .chips a:hover{color:var(--brand);border-color:var(--brand)}
 h2{scroll-margin-top:16px}
 .card{padding:0;overflow:hidden}
@@ -162,10 +162,10 @@ h2{scroll-margin-top:16px}
       <div class="links"><a href="https://github.com/xi-kki/grantini" target="_blank" rel="noopener">View code →</a></div>
     </div>
     <div class="card">
-      <span class="tag code">Code</span>
+      <span class="tag">New · Live</span>
       <h3>Kapitali</h3>
       <p>AI investor copilot with retrieval over your deal notes and market data.</p>
-      <div class="links"><a href="https://github.com/xi-kki/kapitali" target="_blank" rel="noopener">View code →</a></div>
+      <div class="links"><a href="https://kapitali-xikki.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/kapitali" target="_blank" rel="noopener">Code</a></div>
     </div>
     <div class="card">
       <span class="tag">Live</span>
